@@ -1,0 +1,12 @@
+D:\Infotecs\Infotecs\DAL\obj\Release\net7.0\DAL.csproj.AssemblyReference.cache
+D:\Infotecs\Infotecs\DAL\obj\Release\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Infotecs\Infotecs\DAL\obj\Release\net7.0\DAL.AssemblyInfoInputs.cache
+D:\Infotecs\Infotecs\DAL\obj\Release\net7.0\DAL.AssemblyInfo.cs
+D:\Infotecs\Infotecs\DAL\obj\Release\net7.0\DAL.csproj.CoreCompileInputs.cache
+D:\Infotecs\Infotecs\DAL\bin\Release\net7.0\DAL.deps.json
+D:\Infotecs\Infotecs\DAL\bin\Release\net7.0\DAL.dll
+D:\Infotecs\Infotecs\DAL\bin\Release\net7.0\DAL.pdb
+D:\Infotecs\Infotecs\DAL\obj\Release\net7.0\DAL.dll
+D:\Infotecs\Infotecs\DAL\obj\Release\net7.0\refint\DAL.dll
+D:\Infotecs\Infotecs\DAL\obj\Release\net7.0\DAL.pdb
+D:\Infotecs\Infotecs\DAL\obj\Release\net7.0\ref\DAL.dll

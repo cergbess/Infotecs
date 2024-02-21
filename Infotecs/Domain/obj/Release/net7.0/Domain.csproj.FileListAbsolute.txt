@@ -1,0 +1,15 @@
+D:\Infotecs\Infotecs\Domain\obj\Release\net7.0\Domain.csproj.AssemblyReference.cache
+D:\Infotecs\Infotecs\Domain\obj\Release\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Infotecs\Infotecs\Domain\obj\Release\net7.0\Domain.AssemblyInfoInputs.cache
+D:\Infotecs\Infotecs\Domain\obj\Release\net7.0\Domain.AssemblyInfo.cs
+D:\Infotecs\Infotecs\Domain\obj\Release\net7.0\Domain.csproj.CoreCompileInputs.cache
+D:\Infotecs\Infotecs\Domain\bin\Release\net7.0\Domain.deps.json
+D:\Infotecs\Infotecs\Domain\bin\Release\net7.0\Domain.dll
+D:\Infotecs\Infotecs\Domain\bin\Release\net7.0\Domain.pdb
+D:\Infotecs\Infotecs\Domain\obj\Release\net7.0\Domain.dll
+D:\Infotecs\Infotecs\Domain\obj\Release\net7.0\refint\Domain.dll
+D:\Infotecs\Infotecs\Domain\obj\Release\net7.0\Domain.pdb
+D:\Infotecs\Infotecs\Domain\obj\Release\net7.0\ref\Domain.dll
+D:\Infotecs\Infotecs\Domain\bin\Release\net7.0\DAL.dll
+D:\Infotecs\Infotecs\Domain\bin\Release\net7.0\DAL.pdb
+D:\Infotecs\Infotecs\Domain\obj\Release\net7.0\Domain.csproj.CopyComplete

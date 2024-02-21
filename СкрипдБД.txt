@@ -1,0 +1,123 @@
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Введите последовательность символов, состоящую из X, Y и Z:");
+        string input = Console.ReadLine();
+
+        // Создаем массив из символов X, Y и Z
+        char[] charArray = input.ToCharArray();
+
+        // Создаем массив для хранения только X, Y и Z
+        char[] filteredArray = new char[charArray.Length];
+        int index = 0;
+
+        foreach (char c in charArray)
+        {
+            if (c == 'X' || c == 'Y' || c == 'Z')
+            {
+                filteredArray[index] = c;
+                index++;
+            }
+        }
+
+        // Обрезаем массив до количества найденных символов
+        Array.Resize(ref filteredArray, index);
+
+        int pairCount = 0;
+        for (int i = 0; i < filteredArray.Length - 1; i++)
+        {
+            for (int j = i + 1; j < filteredArray.Length; j++)
+            {
+                if ((filteredArray[i] == 'X' && filteredArray[j] == 'Y') ||
+                    (filteredArray[i] == 'X' && filteredArray[j] == 'Z') ||
+                    (filteredArray[i] == 'Y' && filteredArray[j] == 'Z'))
+                {
+                    pairCount++;
+                }
+            }
+        }
+
+        int[,] indexPairs = new int[pairCount, 2];
+        int pairIndex = 0;
+        for (int i = 0; i < filteredArray.Length - 1; i++)
+        {
+            for (int j = i + 1; j < filteredArray.Length; j++)
+            {
+                if ((filteredArray[i] == 'X' && filteredArray[j] == 'Y') ||
+                    (filteredArray[i] == 'X' && filteredArray[j] == 'Z') ||
+                    (filteredArray[i] == 'Y' && filteredArray[j] == 'Z'))
+                {
+                    indexPairs[pairIndex, 0] = i;
+                    indexPairs[pairIndex, 1] = j;
+                    pairIndex++;
+                }
+            }
+        }
+        // Создаем граф
+        Dictionary<int, List<int>> graph = new Dictionary<int, List<int>>();
+
+        for (int i = 0; i < indexPairs.Length; i++)
+        {
+            graph[i] = new List<int>();
+        }
+
+        // Добавляем ребра в соответствии с условиями задачи
+        for (int i = 0; i < pairIndex - 1; i++)
+        {
+            for (int j = i + 1; j < pairIndex; j++)
+            {
+                if (indexPairs[i,0] == indexPairs[j,0] || indexPairs[i,0] == indexPairs[j,1] || 
+                    indexPairs[i,1] == indexPairs[j,0] || indexPairs[i,1] == indexPairs[j,1])
+                {
+                    graph[i].Add(j);
+                    graph[j].Add(i);
+                }
+            }
+        }
+
+        // Проверяем наличие независимого множества размера 1/2 от размера массива filteredArray
+        int halfSize = filteredArray.Length / 2;
+        bool[] visited = new bool[filteredArray.Length];
+
+        bool hasIndependentSet = false;
+        for (int i = 0; i < filteredArray.Length; i++)
+        {
+            if (!visited[i])
+            {
+                int independentSetSize = DFS(graph, visited, i);
+                if (independentSetSize >= halfSize)
+                {
+                    hasIndependentSet = true;
+                    break;
+                }
+            }
+        }
+
+        // Выводим результат
+        if (hasIndependentSet)
+        {
+            Console.WriteLine($"Существует независимое множество размера не меньше {halfSize}.");
+        }
+        else
+        {
+            Console.WriteLine($"Независимое множество размера не меньше {halfSize} не найдено.");
+        }
+    }
+
+    static int DFS(Dictionary<int, List<int>> graph, bool[] visited, int vertex)
+    {
+        visited[vertex] = true;
+        int size = 1;
+
+        foreach (int neighbor in graph[vertex])
+        {
+            if (!visited[neighbor])
+            {
+                size += DFS(graph, visited, neighbor);
+            }
+        }
+
+        return size;
+    }
+}
